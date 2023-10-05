@@ -1,0 +1,125 @@
+* {
+    font-family: sans-serif;
+}
+
+body {
+    box-sizing: border-box;
+    color: #FEFFFF;
+    background-color: #3AAFA9;
+}
+
+#top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: #116466;
+    width: 100vw;
+    height: max(7vh, 40px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+nav {
+    height: 7vh;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 10px;
+}
+
+#logo {
+    height: 100%;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0 20px;
+    justify-content: flex-end;
+}
+
+nav li {
+    margin: 0 10px;
+    height: 100%;
+}
+
+nav a {
+    color: #DEF2F1;
+    height: 100%;
+    font-size: large;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: #3AAFA9;
+    text-decoration: underline;
+}
+
+#header {
+    text-align: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+section {
+    display: flex;
+    padding-top: 8vh;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    flex: 1;
+}
+
+#intro {
+    align-items: center;
+}
+
+#intro p {
+    padding-left: 50px;
+    padding-right: 50px;
+    max-width: 80%;
+    text-align: left;
+}
+
+#projects h2 {
+    text-align: center;
+}
+
+#projects .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.project-card {
+    background-color: #2B7A78;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+}
+
+#contacts {
+    align-items: center;
+}
+
+footer {
+    font-style: italic;
+    text-align: center;
+    margin-top: 50px;
+}
