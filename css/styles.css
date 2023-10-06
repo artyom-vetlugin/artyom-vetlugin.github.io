@@ -128,7 +128,7 @@ section {
 }
 
 .project-card:active {
-    z-index: 1000;
+    z-index: 10;
 }
 
 .project-tech-stack {
@@ -187,8 +187,57 @@ section {
     width: 20%;
 }
 
+#email_image:hover {
+    width: 30%;
+}
+
 footer {
     font-style: italic;
     text-align: center;
     margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+    #header {
+        display: none;
+    }
+
+    body {
+        font-size: 18px;
+    }
+
+    .project-image-container:active:not(.tbd) {
+        overflow: visible;
+        transform: scale(2) translateX(10%);
+        transition: transform 0.5s;
+    }
+}
+
+@media (max-width: 500px) {
+    
+    section {
+        height: 40vh;
+        display: block;
+        flex-grow: 1;
+    }
+    
+    #projects .grid {
+        grid-template-columns: 1fr;
+    }
+
+    #projects {
+        margin-top: 0;
+        margin-bottom: 100vh;  
+    }
+
+    .project-image-container:active:not(.tbd) {
+        overflow: visible;
+        transform: scale(1.1) translateX(10%);
+        transition: transform 0.5s;
+    }
+
+    #contacts {
+        margin-top: 80vh;
+        height: 30vh;
+    }
 }
