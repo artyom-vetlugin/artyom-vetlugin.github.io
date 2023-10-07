@@ -202,6 +202,11 @@ footer {
         display: none;
     }
 
+    #projects {
+        margin-top: 10vh;
+        margin-bottom: 10vh;  
+    }
+
     body {
         font-size: 18px;
     }
@@ -211,14 +216,22 @@ footer {
         transform: scale(2) translateX(10%);
         transition: transform 0.5s;
     }
+
+    #contacts {
+        margin-top: 30vh;
+    }
 }
 
 @media (max-width: 500px) {
     
     section {
-        height: 40vh;
+        height: 50vh;
         display: block;
         flex-grow: 1;
+    }
+
+    #intro h2 {
+        text-align: center;  
     }
     
     #projects .grid {
@@ -226,18 +239,30 @@ footer {
     }
 
     #projects {
-        margin-top: 0;
+        /* margin-top: 30vh; */
         margin-bottom: 100vh;  
     }
 
     .project-image-container:active:not(.tbd) {
-        overflow: visible;
-        transform: scale(1.1) translateX(10%);
-        transition: transform 0.5s;
+        overflow: hidden;
+        transform: none;
     }
 
+    #contacts h2 {
+        text-align: center;
+        padding-bottom: 30px;
+    }
+    
     #contacts {
-        margin-top: 80vh;
-        height: 30vh;
+        margin-top: 40vh;
+        height: 40vh;
+    }
+}
+
+
+@media (max-height: 300px) {
+    #projects {
+        margin-top: 10vh;
+        margin-bottom: 10vh;  
     }
 }
