@@ -100,7 +100,6 @@ nav li {
 nav a {
     color: var(--white-font);
     text-decoration: none;
-
     display: block;
     font-size: 2rem;
     padding: 2rem 1rem;
@@ -128,6 +127,7 @@ section {
     padding-right: 50px;
     max-width: 80%;
     text-align: left;
+    font-style: italic;
 }
 
 #projects .grid {
@@ -216,9 +216,8 @@ section {
     align-items: center;
 }
 
-#contacts a:hover {
-    text-decoration: underline;
-    /* background-color: var(--turq-dark); */
+#contacts p a:hover {
+    background-color: var(--turq-dark);
 }
 
 #email_image {
@@ -233,6 +232,8 @@ footer {
     font-style: italic;
     text-align: center;
     margin-top: 50px;
+    padding: 2rem;
+    border-top: 0.5px dashed var(--turq-dark);
 }
 
 @media (max-width: 768px) {
