@@ -1,11 +1,22 @@
+:root {
+    --turq-dark: #116466;
+    --turq-light: #3AAFA9; 
+    --white-font: #FEFFFF;
+}
+
+
 * {
     font-family: sans-serif;
 }
 
-body {
+html {
     box-sizing: border-box;
-    color: #FEFFFF;
-    background-color: #3AAFA9;
+}
+
+body {
+    
+    color: var(--white-font);
+    background-color: var(--turq-light);
 }
 
 #top-bar {
@@ -13,7 +24,7 @@ body {
     top: 0;
     left: 0;
     z-index: 1000;
-    background-color: #116466;
+    background-color: var(--turq-dark);
     width: 100vw;
     height: max(7vh, 40px);
     display: flex;
@@ -49,14 +60,14 @@ nav li {
 }
 
 nav a {
-    color: #DEF2F1;
+    color: var(--white-font);
     height: 100%;
     font-size: large;
     text-decoration: none;
 }
 
 nav a:hover {
-    background-color: #3AAFA9;
+    background-color: var(--turq-light);
     text-decoration: underline;
 }
 
@@ -102,7 +113,7 @@ section {
 }
 
 .project-card {
-    background-color: #2B7A78;
+    background-color: var(--turq-dark);
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -119,7 +130,7 @@ section {
 }
 
 .project-card a {
-    color: #DEF2F1;
+    color: var(--white-font);
     text-decoration: none;
 }
 
@@ -172,7 +183,7 @@ section {
 }
 
 #contacts a {
-    color: #DEF2F1;
+    color: var(--white-font);
     text-decoration: none;
     display: flex;
     justify-content: center;
