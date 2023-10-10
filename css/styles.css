@@ -1,6 +1,7 @@
 /* custom variables for main colours */
 :root {
     --turq-dark: #116466;
+    --turq-darkest: #17252A;
     --turq-light: #3AAFA9; 
     --white-font: #FEFFFF;
 }
@@ -20,7 +21,6 @@
 
 html {
     box-sizing: border-box;
-
     /* Set font size for easy rem calculations
     * default document font size = 16px, 1rem = 16px, 100% = 16px
     * (100% / 16px) * 10 = 62.5%, 1rem = 10px, 62.5% = 10px
@@ -65,7 +65,7 @@ img {
     top: 0;
     left: 0;
     z-index: 1000;
-    background-color: var(--turq-dark);
+    background-color: var(--turq-darkest);
     width: 100vw;
     display: flex;
     align-items: center;
@@ -109,40 +109,67 @@ nav a:hover {
     background-color: var(--turq-light);
 }
 
-section {
+/* section {
     display: flex;
     padding-top: 8vh;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
+} */
+
+/* intro section */
+#intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
 }
 
-#intro {
-    align-items: center;
+#intro h2 {
+    padding-bottom: 5%;
 }
 
 #intro p {
-    padding-left: 50px;
-    padding-right: 50px;
+    padding: 0 5%;
     max-width: 80%;
-    text-align: left;
+    font-size: 2rem;
+    font-weight: 200;
+    text-align: center;
     font-style: italic;
+}
+
+/* projects section */
+#projects {
+    text-align: center;
+    padding: 10rem 2rem;
+    background: var(--turq-dark);
+
+    /* width: 100%; */
+}
+
+#projects h2 {
+    margin: 0 auto 6rem auto;
 }
 
 #projects .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-    padding: 20px;
+    /* grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); */
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-gap: 4rem;
+    max-width: 1280px;
     width: 90vw;
+    margin: 0 auto;
+    margin-bottom: 6rem;
 }
 
 .project-card {
-    background-color: var(--turq-dark);
-    padding: 30px;
+    background-color: var(--turq-darkest);
+    padding: 5px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     transition: transform 0.2s;
     z-index: 1;
     display: flex;
@@ -156,56 +183,52 @@ section {
 }
 
 .project-card a {
+    height: 15%;
     color: var(--white-font);
     text-decoration: none;
+
+
+    font-size: 2rem;
+    padding: 2rem 0.5rem;
 }
 
 .project-card a:hover {
-    text-decoration: underline;
+    background-color: var(--turq-light);
 }
 
 .project-card:active {
     z-index: 10;
 }
 
+
 .project-tech-stack {
     font-family: "Courier New", Courier, monospace;
     font-size: small;
-}
-
-.project-image-container {
-    position: relative;
-    width: 100%;
-    padding-bottom: 56.25%; 
-    overflow: hidden;
-}
-
-.project-image-container:active:not(.tbd) {
-    overflow: visible;
-    transform: scale(5) translateX(30%);
-    transition: transform 0.5s;
+    height: 15%;
+    padding: 0.5rem 0;
 }
 
 .project-image {
     border-radius: 5px;
-    position: absolute;
-    top: 0;
-    left: 0;
+    border: 1px solid var(--turq-dark);
     width: 100%;
-    height: 100%;
+    height: 70%;
     object-fit: cover;
 }
 
-.project-image.tbd {
-    object-fit: scale-down;
-}
-
 .project-image:active:not(.tbd) {
-    object-fit: contain;
+    border: 0;
+    transform: scale(1.5) translateX(20%);
+    transition: transform 0.5s;
+    overflow: visible;
 }
 
 #contacts {
-    height: 80vh;
+    height: 85vh;
+}
+
+#contacts h2 {
+    padding-top: 8%;
 }
 
 #contacts a {
@@ -214,6 +237,12 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 20px 5px;
+}
+
+#contacts p {
+    max-width: 20%;
+    margin: 0 auto;
 }
 
 #contacts p a:hover {
@@ -225,7 +254,7 @@ section {
 }
 
 #email_image:hover {
-    width: 30%;
+    width: 25%;
 }
 
 footer {
