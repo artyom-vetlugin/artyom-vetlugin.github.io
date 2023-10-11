@@ -109,15 +109,6 @@ nav a:hover {
     background-color: var(--turq-light);
 }
 
-/* section {
-    display: flex;
-    padding-top: 8vh;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-} */
-
 /* intro section */
 #intro {
     display: flex;
@@ -181,11 +172,12 @@ nav a:hover {
 }
 
 .project-card a {
-    height: 15%;
+    max-height: 15%;
     color: var(--white-font);
     text-decoration: none;
     font-size: 2rem;
-    padding: 2rem 0.5rem;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
 }
 
 .project-card a:hover {
@@ -247,7 +239,7 @@ nav a:hover {
 }
 
 #contacts p {
-    max-width: 20%;
+    max-width: 30%;
     margin: 0 auto;
 }
 
@@ -282,6 +274,10 @@ footer {
         overflow: visible;
         transform: scale(1.1);
         transition: transform 0.5s;
+    }
+
+    #contacts p {
+        max-width: 50%;
     }
 }
 
