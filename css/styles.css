@@ -219,7 +219,7 @@ nav a:hover {
 }
 
 #contacts {
-    height: 85vh;
+    height: 87vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -259,7 +259,6 @@ nav a:hover {
 footer {
     font-style: italic;
     text-align: center;
-    margin-top: 50px;
     padding: 2rem;
     border-top: 0.5px dashed var(--turq-dark);
 }
