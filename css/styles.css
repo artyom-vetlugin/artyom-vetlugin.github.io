@@ -146,8 +146,6 @@ nav a:hover {
     text-align: center;
     padding: 10rem 2rem;
     background: var(--turq-dark);
-
-    /* width: 100%; */
 }
 
 #projects h2 {
@@ -186,20 +184,25 @@ nav a:hover {
     height: 15%;
     color: var(--white-font);
     text-decoration: none;
-
-
     font-size: 2rem;
     padding: 2rem 0.5rem;
 }
 
 .project-card a:hover {
     background-color: var(--turq-light);
+
+    .tag {
+        color: var(--turq-light)
+    }
+}
+
+.tag {
+    color: brown;
 }
 
 .project-card:active {
     z-index: 10;
 }
-
 
 .project-tech-stack {
     font-family: "Courier New", Courier, monospace;
@@ -225,6 +228,9 @@ nav a:hover {
 
 #contacts {
     height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 #contacts h2 {
@@ -247,6 +253,7 @@ nav a:hover {
 
 #contacts p a:hover {
     background-color: var(--turq-dark);
+    border-radius: 5px;
 }
 
 #email_image {
@@ -265,71 +272,25 @@ footer {
     border-top: 0.5px dashed var(--turq-dark);
 }
 
+/* adjusting of the design for medium sized viewports */
 @media (max-width: 768px) {
     #header {
         display: none;
     }
 
-    #projects {
-        margin-top: 10vh;
-        margin-bottom: 10vh;  
-    }
-
-    body {
-        font-size: 18px;
-    }
-
-    .project-image-container:active:not(.tbd) {
+    .project-image:active:not(.tbd) {
         overflow: visible;
-        transform: scale(2) translateX(10%);
+        transform: scale(1.1);
         transition: transform 0.5s;
     }
-
-    #contacts {
-        margin-top: 30vh;
-    }
 }
 
+/* adjusting of the design for small sized viewports, e.g. mobiles */
 @media (max-width: 500px) {
-    
-    section {
-        height: 50vh;
-        display: block;
-        flex-grow: 1;
-    }
 
-    #intro h2 {
-        text-align: center;  
-    }
-    
-    #projects .grid {
-        grid-template-columns: 1fr;
-    }
-
-    #projects {
-        margin-bottom: 100vh;  
-    }
-
-    .project-image-container:active:not(.tbd) {
+    .project-image:active:not(.tbd) {
+        border: 1px solid var(--turq-dark);
         overflow: hidden;
         transform: none;
-    }
-
-    #contacts h2 {
-        text-align: center;
-        padding-bottom: 30px;
-    }
-    
-    #contacts {
-        margin-top: 40vh;
-        height: 40vh;
-    }
-}
-
-
-@media (max-height: 300px) {
-    #projects {
-        margin-top: 10vh;
-        margin-bottom: 10vh;  
     }
 }
