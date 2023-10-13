@@ -6,9 +6,8 @@ Welcome to my portfolio repository. This project serves as a personal portfolio 
 
 ## Live Demo
 
-**Live Demo**: [Artyom Vetlugin's Portfolio](#)
+**Live Demo**: [Artyom Vetlugin's Portfolio](https://storage.googleapis.com/av_portfolio_bucket/index.html)
 
-https://storage.googleapis.com/av_portfolio_bucket/index.html
 
 ## Table of Contents
 
