@@ -3,23 +3,34 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Artyom Vetlugin's portfoilio</title>
+        <title>Artyom Vetlugin — Portfolio</title>
+        <meta name="description" content="Portfolio of Artyom Vetlugin: Python, Django, FastAPI, React. Selected pet projects and contact." />
+        <link rel="icon" href="static/images/code_logo.png" type="image/png" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&family=Raleway:wght@700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/styles.css" />
+        <meta property="og:title" content="Artyom Vetlugin — Portfolio" />
+        <meta property="og:description" content="Selected work in Python (Django, FastAPI), JS/React, and more." />
+        <meta property="og:image" content="static/images/portfolio-screen.png" />
+        <meta property="og:type" content="website" />
     </head>
     <body>
-        <div id="top-bar">
-            <a href="#intro">
-                <img src="static/images/code_logo.png" alt="logo" id="logo"/>
+        <a class="skip-link" href="#intro">Skip to content</a>
+        <header id="top-bar" role="banner">
+            <a href="#intro" class="brand">
+                <img src="static/images/code_logo.png" alt="AV logo" id="logo" width="64" height="64"/>
             </a>
             <h1 id="header">Portfolio of Artyom Vetlugin</h1>
-            <nav>            
-            <ul>
-                <li><a href="#intro">Intro</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contacts">Contacts</a></li>
-            </ul>
-        </nav>
-        </div>
+            <button id="nav-toggle" aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation">☰</button>
+            <nav id="site-nav" aria-label="Primary">
+                <ul>
+                    <li><a href="#intro">Intro</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contacts">Contacts</a></li>
+                </ul>
+            </nav>
+        </header>
         <main>
             <section id="intro">
                 <h2>What is this about?</h2>
@@ -31,67 +42,68 @@
                 <h2>Here is a list of the projects I've completed so far:</h2>
                 <div class="grid">
                     <div class="project-card">
-                        <a class="project-github-link" href="https://github.com/artyom-vetlugin/my_portfolio" target="_blank">
+                        <a class="project-github-link" href="https://github.com/artyom-vetlugin/my_portfolio" target="_blank" rel="noopener noreferrer">
                             <span class="tag">&lt;</span>
                             This portfolio
                             <span class="tag">&#47;&gt;</span>
                         </a>
                         <p class="project-tech-stack">HTML, CSS</p>
-                        <img class="project-image" src="static/images/portfolio-screen.png" alt="screenshot ot budget tracker app" />
+                        <img class="project-image" src="static/images/portfolio-screen.png" alt="screenshot of this portfolio homepage" loading="lazy" />
                     </div>
                     <div class="project-card">
-                        <a class="project-github-link" href="https://github.com/artyom-vetlugin/VetBotGPT" target="_blank">
+                        <a class="project-github-link" href="https://github.com/artyom-vetlugin/VetBotGPT" target="_blank" rel="noopener noreferrer">
                             <span class="tag">&lt;</span>
                             Telegram bot with ChatGPT
                             <span class="tag">&#47;&gt;</span>
                         </a>                         
                         <p class="project-tech-stack">Python, OpenAI API, GCP</p>
-                            <img class="project-image" src="static/images/tg-bot-screen.png" alt="screenshot ot chat with Telegram bot" />
+                            <img class="project-image" src="static/images/tg-bot-screen.png" alt="screenshot of chat with Telegram bot" loading="lazy" />
                     </div>
                     <div class="project-card">
-                        <a class="project-github-link" href="https://github.com/artyom-vetlugin/DjangoBudgetTracker" target="_blank">
+                        <a class="project-github-link" href="https://github.com/artyom-vetlugin/DjangoBudgetTracker" target="_blank" rel="noopener noreferrer">
                             <span class="tag">&lt;</span>
                             Budget tracker
                             <span class="tag">&#47;&gt;</span>
                         </a>
                         <p class="project-tech-stack">Python, Django (+Bootstrap, Chart.js), PostgreSQL, Docker, GCP</p>
-                        <img class="project-image" src="static/images/budget-app-screen.png" alt="screenshot ot budget tracker app" />
+                        <img class="project-image" src="static/images/budget-app-screen.png" alt="screenshot of budget tracker app" loading="lazy" />
                     </div>
                     <div class="project-card">
-                        <a class="project-github-link" href="https://github.com/artyom-vetlugin/" target="_blank">
+                        <a class="project-github-link" href="https://github.com/artyom-vetlugin/" target="_blank" rel="noopener noreferrer">
                             <span class="tag">&lt;</span>
                             TBD
                             <span class="tag">&#47;&gt;</span>
                         </a>
                         <p class="project-tech-stack">TBD stack</p>
-                        <img class="project-image tbd" src="static/images/TBD.png" alt="TBD image" />
+                        <img class="project-image tbd" src="static/images/TBD.png" alt="TBD image" loading="lazy" />
                     </div>
                     <div class="project-card">
-                        <a class="project-github-link" href="https://github.com/artyom-vetlugin/" target="_blank">
+                        <a class="project-github-link" href="https://github.com/artyom-vetlugin/" target="_blank" rel="noopener noreferrer">
                             <span class="tag">&lt;</span>
                             TBD
                             <span class="tag">&#47;&gt;</span>
                         </a>
                         <p class="project-tech-stack">TBD stack</p>
-                        <img class="project-image tbd" src="static/images/TBD.png" alt="TBD image" />
+                        <img class="project-image tbd" src="static/images/TBD.png" alt="TBD image" loading="lazy" />
                     </div>
                     <div class="project-card">
-                        <a class="project-github-link" href="https://github.com/artyom-vetlugin/" target="_blank">
+                        <a class="project-github-link" href="https://github.com/artyom-vetlugin/" target="_blank" rel="noopener noreferrer">
                             <span class="tag">&lt;</span>
                             TBD
                             <span class="tag">&#47;&gt;</span>
                         </a>
                         <p class="project-tech-stack">TBD stack</p>
-                        <img class="project-image tbd" src="static/images/TBD.png" alt="TBD image" />
+                        <img class="project-image tbd" src="static/images/TBD.png" alt="TBD image" loading="lazy" />
                     </div>
                 </div>
             </section>
             <section id="contacts">
                 <h2>Drop me email</h2>
-                <a href="mailto:artyom.vetlugin@gmail.com"> <img id="email_image" src="static/images/email.png" alt="mail photo" /> </a>
+                <a href="mailto:artyom.vetlugin@gmail.com"> <img id="email_image" src="static/images/email.png" alt="mail icon" loading="lazy" /> </a>
                 <p><a href="mailto:artyom.vetlugin@gmail.com">artyom.vetlugin@gmail.com</a></p>
             </section>
         </main>
         <footer><p>© feel free to re-use anything you want :)</p></footer>
+        <script defer src="js/main.js"></script>
     </body>
 </html>

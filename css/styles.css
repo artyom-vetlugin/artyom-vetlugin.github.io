@@ -4,6 +4,7 @@
     --turq-darkest: #17252A;
     --turq-light: #3AAFA9; 
     --white-font: #FEFFFF;
+    --header-height: clamp(56px, 7vh, 72px);
 }
 
 /* base reset for all HTML elements on the page eliminating the default browsers values */
@@ -27,6 +28,7 @@ html {
     */
     font-size: 62.5%;
     scroll-behavior: smooth;
+    scroll-padding-top: var(--header-height);
 }
 
 /* base styles */
@@ -66,12 +68,13 @@ img {
     left: 0;
     z-index: 1000;
     background-color: var(--turq-darkest);
-    width: 100vw;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     box-shadow: 0 2px 0 rgba(33, 62, 54, 0.4);
-    height: max(7vh, 60px);
+    height: var(--header-height);
+    padding-inline: 8px;
 }
 
 nav {
@@ -83,7 +86,7 @@ nav {
 }
 
 #logo {
-    height: max(7vh, 60px);
+    height: var(--header-height);
 }
 
 nav ul {
@@ -109,6 +112,40 @@ nav a:hover {
     background-color: var(--turq-light);
 }
 
+nav a.active {
+    box-shadow: inset 0 -3px 0 var(--turq-light);
+}
+
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.skip-link:focus {
+    left: 8px;
+    top: 8px;
+    width: auto;
+    height: auto;
+    padding: 8px 12px;
+    background: var(--turq-darkest);
+    color: var(--white-font);
+    border-radius: 6px;
+}
+
+#nav-toggle {
+    display: none;
+    background: transparent;
+    color: var(--white-font);
+    border: 1px solid var(--turq-light);
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 2rem;
+}
+
 /* intro section */
 #intro {
     display: flex;
@@ -116,7 +153,7 @@ nav a:hover {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100vh;
+    min-height: calc(100svh - var(--header-height));
 }
 
 #intro h2 {
@@ -145,8 +182,7 @@ nav a:hover {
 
 #projects .grid {
     display: grid;
-    /* grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); */
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     grid-gap: 4rem;
     max-width: 1280px;
     width: 90vw;
@@ -182,10 +218,10 @@ nav a:hover {
 
 .project-card a:hover {
     background-color: var(--turq-light);
+}
 
-    .tag {
-        color: var(--turq-light)
-    }
+.project-card a:hover .tag {
+    color: var(--turq-light)
 }
 
 .tag {
@@ -218,8 +254,15 @@ nav a:hover {
     overflow: visible;
 }
 
+/* focus styles */
+a:focus-visible, button:focus-visible {
+    outline: 3px solid #FEFFFF;
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
 #contacts {
-    height: 87vh;
+    min-height: calc(100svh - var(--header-height));
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -249,11 +292,13 @@ nav a:hover {
 }
 
 #email_image {
-    width: 20%;
+    width: clamp(140px, 20vw, 220px);
+    height: auto;
+    transition: transform 0.2s ease;
 }
 
 #email_image:hover {
-    width: 25%;
+    transform: scale(1.05);
 }
 
 footer {
@@ -263,10 +308,42 @@ footer {
     border-top: 0.5px dashed var(--turq-dark);
 }
 
+main {
+    padding-top: var(--header-height);
+}
+
 /* adjusting of the design for medium sized viewports */
 @media (max-width: 768px) {
     #header {
         display: none;
+    }
+
+    #nav-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #site-nav {
+        position: fixed;
+        top: var(--header-height);
+        right: 0;
+        left: 0;
+        display: none;
+        background: var(--turq-darkest);
+        box-shadow: 0 2px 0 rgba(33, 62, 54, 0.4);
+    }
+
+    #site-nav.is-open {
+        display: block;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav a {
+        padding: 1.2rem 2rem;
     }
 
     .project-image:active:not(.tbd) {
@@ -287,5 +364,15 @@ footer {
         border: 1px solid var(--turq-dark);
         overflow: hidden;
         transform: none;
+    }
+}
+
+/* reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
     }
 }
