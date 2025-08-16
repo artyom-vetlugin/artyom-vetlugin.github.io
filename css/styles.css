@@ -62,6 +62,51 @@ img {
 }
   
 
+/* Lightbox overlay */
+.lightbox-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    padding: 2rem;
+}
+
+.lightbox-overlay.is-open {
+    display: flex;
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: min(95vw, 1200px);
+    max-height: 90vh;
+}
+
+.lightbox-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: -14px;
+    right: -14px;
+    background: var(--turq-darkest);
+    color: var(--white-font);
+    border: 1px solid var(--turq-light);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: grid;
+    place-items: center;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
 #top-bar {
     position: fixed;
     top: 0;
@@ -230,6 +275,16 @@ nav a.active {
 
 .project-card:active {
     z-index: 10;
+}
+
+.project-card[aria-disabled="true"] {
+    opacity: 0.5;
+    filter: grayscale(30%);
+}
+
+.project-card[aria-disabled="true"] .project-github-link {
+    pointer-events: none;
+    cursor: default;
 }
 
 .project-tech-stack {

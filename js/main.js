@@ -39,4 +39,42 @@ if (sections.length > 0) {
     sections.forEach((section) => observer.observe(section));
 }
 
+// Lightbox
+const lightbox = document.getElementById('lightbox');
+const lightboxImage = document.getElementById('lightbox-image');
+const lightboxClose = document.getElementById('lightbox-close');
+
+function openLightbox(src, alt) {
+    if (!lightbox || !lightboxImage) return;
+    lightboxImage.src = src;
+    lightboxImage.alt = alt || 'preview';
+    lightbox.classList.add('is-open');
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+    if (!lightbox || !lightboxImage) return;
+    lightbox.classList.remove('is-open');
+    lightbox.setAttribute('aria-hidden', 'true');
+    lightboxImage.src = '';
+    document.body.style.overflow = '';
+}
+
+document.addEventListener('click', (e) => {
+    const target = e.target;
+    if (target && target.matches('img.project-image:not(.tbd)[data-lightbox]')) {
+        openLightbox(target.src, target.alt);
+    }
+});
+
+lightboxClose && lightboxClose.addEventListener('click', closeLightbox);
+lightbox && lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+});
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLightbox();
+});
+
 
