@@ -8,7 +8,7 @@ Welcome to my portfolio repository. This project serves as a personal portfolio 
 
 ## Live Demo
 
-**Live Demo**: [Artyom Vetlugin's Portfolio]()
+**Live Demo**: [Artyom Vetlugin's Portfolio](https://artyom-vetlugin.github.io/my_portfolio/)
 
 
 ## Table of Contents
