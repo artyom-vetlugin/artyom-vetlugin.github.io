@@ -58,7 +58,8 @@ h2 {
 
 img {
     display: block;
-    width: 100%;
+    max-width: 100%;
+    height: auto;
 }
   
 
@@ -132,6 +133,7 @@ nav {
 
 #logo {
     height: var(--header-height);
+    width: auto;
 }
 
 nav ul {
